@@ -1,0 +1,100 @@
+<div class="account-page" *ngIf="account$ | async as account; else loading">
+  <div class="page-header">
+    <div class="page-title">
+      <h1>
+        <mat-icon style="vertical-align: bottom; font-size: 40px; margin: auto 10px 12px auto">account_balance_wallet</mat-icon>
+        {{ account.title }}
+      </h1>
+    </div>
+
+    <div class="transactions-btn">
+      <button mat-raised-button color="accent" [routerLink]="['/transaction', account._id]">Transactions</button>
+    </div>
+
+  </div>
+  <div class="page-content">
+    <div class="stats-cards">
+      <div class="cards">
+
+        <div class="card-balance">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>Balance:</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+
+              <div class="balance">
+                <h2>$ {{ account.balance }}</h2>
+              </div>
+
+              <div class="text">
+                <p>This block displays your current balance sheet, <br> which will change in terms of income and expenses</p>
+              </div>
+
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="card-incomes">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>Incomes:</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+
+              <div class="incomes">
+                <h2>+ $ {{ account.incomes }}</h2>
+              </div>
+
+              <div class="text">
+                <p>This block displays your profits, which increase the current balance</p>
+              </div>
+
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="card-expenses">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>Expenses:</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+
+              <div class="expenses">
+                <h2>- $ {{ account.expenses }}</h2>
+              </div>
+
+              <div class="text">
+                <p>This block shows your expenses relative to the <br> current balance</p>
+              </div>
+
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="card-balance-of-period">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>Balance of the period:</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+
+              <div class="period_of_balance">
+                <h2>+ $ {{ account.periodBalance }}</h2>
+              </div>
+
+              <div class="text">
+                <p>This block shows how your balance has changed over a period of one month</p>
+              </div>
+
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #loading>
+  <app-loader style="margin: 430px auto; display: block"></app-loader>
+</ng-template>

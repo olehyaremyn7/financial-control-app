@@ -1,0 +1,89 @@
+<div class="filter-component">
+  <mat-card class="filter-card">
+    <mat-card-content class="filter-card-content">
+      <div class="form-control">
+        <div class="mat-form-field-transaction-type">
+          <mat-form-field color="primary">
+            <mat-label>Transaction type</mat-label>
+            <mat-select [(ngModel)]="transaction" #select>
+              <mat-select-trigger>{{ select.value }}</mat-select-trigger>
+              <mat-option *ngFor="let transaction of type" value="{{ transaction.value }}">
+                <mat-icon>{{ transaction.iconValue }}</mat-icon> {{transaction.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="form-control" *ngIf="!transaction">
+        <div class="mat-form-field-choose">
+          <mat-form-field color="primary">
+            <mat-label>Choose transaction type</mat-label>
+            <mat-select #select disabled></mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="form-control" *ngIf="transaction === 'Expense'">
+        <div class="mat-form-field-transaction-appointment">
+          <mat-form-field color="primary">
+            <mat-label>Expense category</mat-label>
+            <mat-select [(ngModel)]="appointmentSelect" #select>
+              <mat-select-trigger>{{ select.value || appointmentSelect }}</mat-select-trigger>
+              <mat-option *ngFor="let appointment of appointment" value="{{ appointment.value }}">
+                <mat-icon>{{ appointment.iconValue }}</mat-icon> {{appointment.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="form-control" *ngIf="transaction === 'Profit'">
+        <div class="mat-form-field-transaction-source">
+          <mat-form-field color="primary">
+            <mat-label>Profit source</mat-label>
+            <mat-select [(ngModel)]="sourceSelect">
+              <mat-option *ngFor="let source of source" value="{{ source.value }}">
+                {{ source.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="form-control">
+        <div class="mat-form-field-datepicker">
+          <mat-form-field color="primary">
+            <mat-label>Start</mat-label>
+            <input matInput [matDatepicker]="picker1" [(ngModel)]="start">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="form-control">
+        <div class="mat-form-field-datepicker">
+          <mat-form-field color="primary">
+            <mat-label>End</mat-label>
+            <input matInput [matDatepicker]="picker2" [(ngModel)]="end">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+
+      <div class="filter-btn-field">
+        <button mat-flat-button color="accent"
+                type="submit"
+                class="filter-btn"
+                (click)="submit()">
+          Filter
+        </button>
+      </div>
+
+    </mat-card-actions>
+  </mat-card>
+</div>

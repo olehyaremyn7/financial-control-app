@@ -1,0 +1,51 @@
+<div class="transaction-page">
+  <div class="page-header">
+    <div class="page-title">
+      <h1>
+        Transactions
+      </h1>
+    </div>
+
+    <div class="transaction-btn">
+      <button class="filter-btn" [ngClass]="{'active' : isFilter, 'filtered': isFiltered()}"
+              (click)="isFilter = !isFilter"
+              mat-raised-button color="primary">Filter</button>
+      <button mat-raised-button color="warn" (click)="openExpenseDialog()">New expense</button>
+      <button mat-raised-button color="accent" (click)="openProfitDialog()">New profit</button>
+    </div>
+
+  </div>
+  <div class="page-content">
+    <app-transaction-filter (filter)="apply($event)" *ngIf="isFilter"></app-transaction-filter>
+
+    <div class="page-reloading" *ngIf="!reloading; else reloadingLoader">
+      <div class="content" *ngIf="transactions.length > 0; else empty">
+
+        <app-transaction-list [accountId]="accountId" [transactions]="transactions"></app-transaction-list>
+
+        <div class="page-btn" *ngIf="!noTransactions">
+          <button mat-flat-button color="accent" (click)="loadMore()" *ngIf="!loading; else loader">Load more <mat-icon>expand_more</mat-icon></button>
+        </div>
+
+        <ng-template #loader>
+          <app-loader style="margin: 300px auto; display: block"></app-loader>
+        </ng-template>
+
+      </div>
+
+      <ng-template #empty>
+        <div class="empty-data">
+          <h1>There are no transactions</h1>
+          <br>
+          <h1>Add new transaction</h1>
+        </div>
+      </ng-template>
+
+    </div>
+
+    <ng-template #reloadingLoader>
+      <app-loader style="margin: 300px auto; display: block"></app-loader>
+    </ng-template>
+
+  </div>
+</div>

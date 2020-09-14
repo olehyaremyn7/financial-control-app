@@ -1,0 +1,58 @@
+<div class="accounts-page">
+  <div class="page-header">
+    <div class="page-title">
+      <h1>
+        <mat-icon style="vertical-align: bottom; font-size: 40px; margin: auto 10px 12px auto">account_balance</mat-icon>
+        Accounts</h1>
+    </div>
+
+    <div class="add-account-btn">
+      <button mat-raised-button color="accent" routerLink="/accounts/new">Create</button>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="list"
+         *ngIf="accounts$ | async as accounts; else loader">
+
+      <mat-list role="list"
+                *ngIf="accounts.length !== 0; else empty">
+
+        <mat-list-item role="listitem" *ngFor="let account of accounts">
+          <a [routerLink]="['/account', account._id]">
+
+            {{account.title}}
+
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item [routerLink]="['/accounts', account._id]">
+                <mat-icon>edit</mat-icon>
+                <span>Edit</span>
+              </button>
+              <button mat-menu-item (click)="remove(account._id, account.title)">
+                <mat-icon>delete</mat-icon>
+                <span>Delete</span>
+              </button>
+            </mat-menu>
+
+            <mat-divider></mat-divider>
+          </a>
+          <mat-icon style="cursor: pointer; margin-top: -2px; margin-left: auto" [matMenuTriggerFor]="menu">more_vert</mat-icon>
+        </mat-list-item>
+
+      </mat-list>
+
+      <ng-template #empty>
+        <div class="empty-data">
+          <h1>There are no accounts</h1>
+          <br>
+            <h1>Add new account</h1>
+        </div>
+      </ng-template>
+
+    </div>
+
+    <ng-template #loader>
+      <app-loader style="margin: 300px auto; display: block"></app-loader>
+    </ng-template>
+
+  </div>
+</div>

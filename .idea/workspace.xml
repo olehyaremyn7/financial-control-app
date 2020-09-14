@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="251e24d9-33ad-4e0c-a97b-fa859ed33577" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1fRkYdw09J87xjMNWVRHIOthXs5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="ts.external.directory.path" value="C:\Users\oleh_\Desktop\mean_web_app\client\node_modules\typescript\lib" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="251e24d9-33ad-4e0c-a97b-fa859ed33577" name="Default Changelist" comment="" />
+      <created>1596188341654</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596188341654</updated>
+      <workItem from="1596188342719" duration="2387000" />
+      <workItem from="1596192388272" duration="11250000" />
+      <workItem from="1596212044574" duration="6591000" />
+      <workItem from="1596555771183" duration="969000" />
+      <workItem from="1596556909459" duration="13044000" />
+      <workItem from="1596631054938" duration="9419000" />
+      <workItem from="1596795519877" duration="1864000" />
+      <workItem from="1596816193839" duration="7772000" />
+      <workItem from="1596872200224" duration="19749000" />
+      <workItem from="1596897895491" duration="3039000" />
+      <workItem from="1597068034118" duration="20979000" />
+      <workItem from="1597096962364" duration="1050000" />
+      <workItem from="1597099983625" duration="118000" />
+      <workItem from="1597138449530" duration="21743000" />
+      <workItem from="1597174443192" duration="7852000" />
+      <workItem from="1597219579692" duration="1255000" />
+      <workItem from="1597229755267" duration="19096000" />
+      <workItem from="1597772388798" duration="5921000" />
+      <workItem from="1598173429339" duration="30790000" />
+      <workItem from="1598267829635" duration="305000" />
+      <workItem from="1598276413962" duration="2980000" />
+      <workItem from="1598456855757" duration="7535000" />
+      <workItem from="1598467405500" duration="9300000" />
+      <workItem from="1598531159743" duration="12181000" />
+      <workItem from="1598544823833" duration="1149000" />
+      <workItem from="1598546297267" duration="2158000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="285" y="259" key="#com.intellij.ide.util.MemberChooser" timestamp="1597774887549">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="285" y="259" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1597774887549" />
+    <state x="690" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596212707870">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="690" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1596212707870" />
+    <state x="616" y="250" key="run.anything.popup" timestamp="1598199986475">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="616" y="250" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1598199986475" />
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1598179688049">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1598179688049" />
+  </component>
+</project>

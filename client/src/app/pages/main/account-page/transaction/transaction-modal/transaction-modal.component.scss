@@ -1,0 +1,65 @@
+.transaction-modal-form {
+  width: 600px;
+  height: 630px;
+}
+
+.transaction-modal-form-title {
+  display: flex;
+}
+
+.transaction-modal-form-title h1 {
+  margin: 30px auto auto 25px;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.transaction-form {
+  margin-top: 50px;
+}
+
+.mat-form-field-price {
+  width: 542px;
+  margin-left: 5%;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.mat-form-field-appointment {
+  width: 542px;
+  margin-left: 5%;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.mat-form-field-source {
+  width: 542px;
+  margin-left: 5%;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.mat-form-field-datepicker {
+  width: 542px;
+  margin-left: 5%;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.mat-form-field-note {
+  width: 542px;
+  margin-left: 5%;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.transaction-form-btn {
+  margin-left: 5%;
+  font-size: 17px;
+  padding: 5px 25px 5px 25px;
+}
+
+.transaction-remove-btn {
+  margin-left: 3%;
+  font-size: 17px;
+  padding: 5px 25px 5px 25px;
+}

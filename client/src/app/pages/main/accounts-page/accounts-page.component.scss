@@ -1,0 +1,58 @@
+.accounts-page {
+  margin: 80px auto;
+  padding: 0 5rem;
+  max-width: 100%;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-title h1 {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.add-account-btn button {
+  padding: 5px 30px 5px 30px;
+  font-size: 18px;
+}
+
+.accounts-page .page-content .list {
+  margin: 70px auto;
+}
+
+.accounts-page .page-content .list mat-list mat-list-item {
+  padding: 10px 5px;
+  width: 99%;
+  cursor: pointer;
+  margin-bottom: 3px;
+}
+
+.accounts-page .page-content .list mat-list mat-list-item a {
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.accounts-page .page-content .list mat-list mat-list-item a:hover {
+  text-decoration: none;
+  color: #f44336;
+}
+
+.empty-data {
+  display: block;
+  margin: 300px auto;
+  text-align: center;
+}
+
+.empty-data h1 {
+  font-size: 30px;
+  font-weight: 500;
+  background: #673ab7;
+  color: white;
+  display: inline;
+  padding: 0 13px 0 13px;
+}

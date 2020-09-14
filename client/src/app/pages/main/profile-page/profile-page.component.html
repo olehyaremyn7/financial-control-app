@@ -1,0 +1,141 @@
+<div class="profile-page">
+  <div class="page-header">
+    <div class="page-title">
+      <h1>
+        <mat-icon style="vertical-align: bottom; font-size: 40px; margin: auto 10px 12px auto">account_circle</mat-icon>
+        Profile</h1>
+    </div>
+
+    <div class="data-btn">
+      <button mat-raised-button color="accent"
+              [ngStyle]="{ background: userData ? '#ffd740' : '#f44336', color: userData ? 'black' : 'white' }"
+              (click)="viewUserData()">
+        User data
+      </button>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="profile-cards">
+      <div class="cards">
+
+        <div class="user-new-info-card">
+          <mat-card>
+            <mat-card-content>
+
+              <div class="image-preview" matRipple [ngStyle]="{ border: imagePreview ? 'none' : '1px dashed #424242' }">
+                <p *ngIf="!imagePreview">Avatar</p>
+                <img class="preview-image" [src]="imagePreview" alt="preview" *ngIf="imagePreview">
+              </div>
+
+              <form class="card" [formGroup]="form" (ngSubmit)="submit()">
+                <div
+                  class="form-control"
+                  [ngClass]="{invalid: form.get('name').touched && form.get('name').invalid}">
+                  <mat-form-field class="mat-form-field-name">
+                    <mat-label for="email">Your name</mat-label>
+                    <input matInput
+                           formControlName="name"
+                           type="text"
+                           id="name"
+                           placeholder="Enter your name">
+                    <mat-error
+                      *ngIf="form.get('name').touched && form.get('name').invalid"
+                      class="validation"
+                    >
+                      <small *ngIf="form.get('name').errors.required">
+                        Please enter your name
+                      </small>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+
+                <div class="form-control">
+                  <input type="file" style="display: none" #input [disabled]="form.disabled" (change)="fileUpload($event)">
+                </div>
+
+                <button (click)="fileInput()" class="profile-form-upload-btn" mat-flat-button color="warn" type="button">
+                  <mat-icon>cloud_upload</mat-icon> Upload an image
+                </button>
+
+                <button mat-flat-button color="accent"
+                        type="submit"
+                        class="profile-form-btn"
+                        [disabled]="form.invalid || submitted">
+                  Save changes
+                </button>
+              </form>
+
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="user-base-info-card">
+          <mat-card>
+            <mat-card-content>
+
+              <div *ngIf="userData" class="user-data-block" matRipple>
+                <p>To view your own data <br> click the button <strong>User data</strong></p>
+              </div>
+
+              <div *ngIf="!userData" class="card-content-form">
+                <form class="user-base-data-card" [formGroup]="baseDataForm" (ngSubmit)="baseDataSubmit()">
+                  <div
+                    class="form-control"
+                    [ngClass]="{invalid: baseDataForm.get('email').touched && baseDataForm.get('email').invalid}">
+                    <mat-form-field class="mat-form-field-email">
+                      <mat-label for="email"><mat-icon style="vertical-align: bottom; font-size: 20px">email</mat-icon> Email address</mat-label>
+                      <input matInput formControlName="email" type="email" id="email" placeholder="Ex. pat@example.com">
+                      <mat-error
+                        *ngIf="baseDataForm.get('email').touched && baseDataForm.get('email').invalid"
+                        class="validation"
+                      >
+                        <small *ngIf="baseDataForm.get('email').errors.required">
+                          Please enter email
+                        </small>
+                        <small *ngIf="baseDataForm.get('email').errors.email">
+                          Please enter a valid email address
+                        </small>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+
+                  <div
+                    class="form-control"
+                    [ngClass]="{invalid: baseDataForm.get('password').touched && baseDataForm.get('password').invalid}">
+                    <mat-form-field class="mat-form-field-password">
+                      <mat-label for="password"><mat-icon style="vertical-align: bottom; font-size: 20px">vpn_key</mat-icon> Password</mat-label>
+                      <input matInput formControlName="password" style="border: none" id="password" type="password">
+                      <mat-error
+                        *ngIf="baseDataForm.get('password').touched && baseDataForm.get('password').invalid"
+                        class="validation"
+                      >
+                        <small *ngIf="baseDataForm.get('password').errors.minlength">
+                          Min password length must be
+                          {{baseDataForm.get('password').errors.minlength.requiredLength}}
+                          symbols. Now it is
+                          {{baseDataForm.get('password').errors.minlength.actualLength}}
+                          symbols
+                        </small>
+                        <small *ngIf="baseDataForm.get('password').errors.required">
+                          Please enter password
+                        </small>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+
+                  <button mat-flat-button color="accent"
+                          type="submit"
+                          class="update-btn"
+                          [disabled]="baseDataForm.invalid || submitted">
+                    Change
+                  </button>
+                </form>
+              </div>
+
+            </mat-card-content>
+          </mat-card>
+        </div>
+    </div>
+  </div>
+  </div>
+</div>

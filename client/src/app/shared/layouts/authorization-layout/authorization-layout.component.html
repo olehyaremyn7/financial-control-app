@@ -1,0 +1,47 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened>
+    <div class="sidenav-title">
+      <h1 class="first-h1">Aligator</h1>
+      <h1 class="second-h1"><img style="height: 40px;" src="/assets/images/wallet.png" alt="">
+        Money</h1>
+    </div>
+
+    <div class="sidenav-links">
+      <ul class="links">
+        <li *ngFor="let link of links" routerLinkActive="active">
+          <button [routerLink]="[link.url]" mat-button color="primary">{{link.name}}</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="date-block">
+      {{ date | date: 'medium' }}
+    </div>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+    <app-alert></app-alert>
+
+    <button mat-fab color="accent" class="auth-info-btn" (click)="openDialog()">
+      <mat-icon>info</mat-icon>
+    </button>
+
+    <button class="menu-btn" mat-fab color="accent" [matMenuTriggerFor]="menu">
+      <mat-icon>phone</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <h4 style="margin: 5px auto 10px 17px">Contact Us</h4>
+      <button mat-menu-item>
+        <mat-icon>phone</mat-icon>
+        <span>+800-800-800-07</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>email</mat-icon>
+        <span>oleg.benderg@gmail.com</span>
+      </button>
+    </mat-menu>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,23 @@
+<div class="list">
+
+  <mat-list role="list">
+
+    <mat-list-item role="listitem" *ngFor="let transaction of transactions" (click)="openEditDialog(transaction, transaction.type)">
+      <div class="transaction">
+        <div class="transaction-left-block">
+          <h3>{{ transaction.date | date:'dd.MM.yyyy' }}</h3>
+          <h1 *ngIf="transaction.type === 'Expense'"><mat-icon style="vertical-align: middle; font-size: 25px; margin-top: -5px">{{icon(transaction.appointment)}}</mat-icon> {{ transaction.appointment }}</h1>
+          <h1 *ngIf="transaction.type === 'Profit'">{{ transaction.source }}</h1>
+          <h2>{{transaction.note}}</h2>
+        </div>
+
+        <div class="transaction-right-block">
+          <h1>{{ transaction.type === 'Profit' ? '+' : '-'}} {{transaction.price}}</h1>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+    </mat-list-item>
+
+  </mat-list>
+</div>

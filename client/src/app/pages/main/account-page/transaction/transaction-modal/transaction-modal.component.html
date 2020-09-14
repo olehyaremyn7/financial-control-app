@@ -1,0 +1,180 @@
+<div class="transaction-modal-form" *ngIf="expense.expense">
+  <div class="transaction-modal-form-title">
+    <h1>{{ editExpense.editExpense ? 'Edit' : 'New' }} expense
+       <mat-icon style="vertical-align: middle; font-size: 40px; margin-right: 10px; margin-top: -20px">{{ editExpense.editExpense ? 'edit' : 'attach_money' }}</mat-icon></h1>
+  </div>
+  <form class="transaction-form" [formGroup]="formExpense" (ngSubmit)="submitExpense()">
+    <div
+      class="form-control"
+      [ngClass]="{invalid: formExpense.get('priceExpense').touched && formExpense.get('priceExpense').invalid}">
+      <mat-form-field class="mat-form-field-price">
+        <mat-label for="priceExpense"><mat-icon style="vertical-align: bottom; font-size: 20px; margin-right: 5px;">money</mat-icon>Price</mat-label>
+        <input matInput formControlName="priceExpense" type="number" min="1" id="priceExpense">
+        <mat-error
+          *ngIf="formExpense.get('priceExpense').touched && formExpense.get('priceExpense').invalid"
+          class="validation"
+        >
+          <small *ngIf="formExpense.get('priceExpense').errors.required">
+            Please enter price
+          </small>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div
+      class="form-control"
+      [ngClass]="{invalid: formExpense.get('appointmentExpense').touched && formExpense.get('appointmentExpense').invalid}">
+      <mat-form-field class="mat-form-field-appointment">
+        <mat-label for="appointmentExpense"><mat-icon style="vertical-align: bottom; font-size: 20px; margin-right: 5px;">category</mat-icon>Appointment</mat-label>
+        <mat-select #select formControlName="appointmentExpense">
+          <mat-select-trigger>{{ select.value || formExpense.get('appointmentExpense').value }}</mat-select-trigger>
+          <mat-option *ngFor="let appointment of appointment" value="{{ appointment.value }}">
+            <mat-icon>{{ appointment.iconValue }}</mat-icon> {{appointment.viewValue}}
+          </mat-option>
+        </mat-select>
+        <mat-error
+          *ngIf="formExpense.get('appointmentExpense').touched && formExpense.get('appointmentExpense').invalid"
+          class="validation"
+        >
+          <small *ngIf="formExpense.get('appointmentExpense').errors.required">
+            Please select appointment
+          </small>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-control">
+      <div class="mat-form-field-datepicker">
+        <mat-form-field color="primary">
+          <mat-label><mat-icon style="vertical-align: bottom; font-size: 20px; margin-right: 5px;">update</mat-icon>Date</mat-label>
+          <input matInput [matDatepicker]="picker1" formControlName="dateExpense">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div
+      class="form-control"
+      [ngClass]="{invalid: formExpense.get('noteExpense').touched && formExpense.get('noteExpense').invalid}">
+      <mat-form-field class="mat-form-field-note">
+        <textarea matInput formControlName="noteExpense" type="text" id="noteExpense" placeholder="Text..."></textarea>
+        <mat-error
+          *ngIf="formExpense.get('noteExpense').touched && formExpense.get('noteExpense').invalid"
+          class="validation"
+        >
+          <small *ngIf="formExpense.get('noteExpense').errors.required">
+            Please enter note
+          </small>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <button mat-flat-button color="accent"
+            type="submit"
+            class="transaction-form-btn"
+            [disabled]="formExpense.invalid || submitted">
+      Save
+    </button>
+
+    <button mat-flat-button color="warn"
+            (click)="remove()"
+            type="button"
+            class="transaction-remove-btn"
+            *ngIf="editExpense.editExpense">
+      Delete
+    </button>
+  </form>
+</div>
+
+
+
+<div class="transaction-modal-form" *ngIf="profit.profit">
+  <div class="transaction-modal-form-title">
+    <h1>{{ editProfit.editProfit ? 'Edit' : 'New' }} profit
+      <mat-icon style="vertical-align: middle; font-size: 40px; margin-right: 10px; margin-top: -20px">{{ editProfit.editProfit ? 'edit' : 'attach_money' }}</mat-icon></h1>
+  </div>
+  <form class="transaction-form" [formGroup]="formProfit" (ngSubmit)="submitProfit()">
+    <div
+      class="form-control"
+      [ngClass]="{invalid: formProfit.get('priceProfit').touched && formProfit.get('priceProfit').invalid}">
+      <mat-form-field class="mat-form-field-price">
+        <mat-label for="priceProfit"><mat-icon style="vertical-align: bottom; font-size: 20px; margin-right: 5px;">money</mat-icon>Price</mat-label>
+        <input matInput formControlName="priceProfit" type="number" min="1" id="priceProfit">
+        <mat-error
+          *ngIf="formProfit.get('priceProfit').touched && formProfit.get('priceProfit').invalid"
+          class="validation"
+        >
+          <small *ngIf="formProfit.get('priceProfit').errors.required">
+            Please enter price
+          </small>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div
+      class="form-control"
+      [ngClass]="{invalid: formProfit.get('sourceProfit').touched && formProfit.get('sourceProfit').invalid}">
+      <mat-form-field class="mat-form-field-source">
+        <mat-label for="source"><mat-icon style="vertical-align: bottom; font-size: 20px; margin-right: 5px;">account_balance_wallet</mat-icon>Source</mat-label>
+        <mat-select formControlName="sourceProfit" #select>
+          <mat-select-trigger>{{ select.value || sourceSelect }}</mat-select-trigger>
+          <mat-option *ngFor="let source of source" value="{{ source.value }}" (click)="newSource(source.viewValue)">
+             {{ source.viewValue }} <mat-icon *ngIf="source._id" (click)="removeSource(source._id)" style="cursor: pointer; float: right; margin-top: 19px;">delete</mat-icon>
+            <mat-icon *ngIf="source.viewValue === 'New source'" style="cursor: pointer; float: right; margin-top: 19px;">add</mat-icon>
+          </mat-option>
+        </mat-select>
+        <mat-error
+          *ngIf="formProfit.get('sourceProfit').touched && formProfit.get('sourceProfit').invalid"
+          class="validation"
+        >
+          <small *ngIf="formProfit.get('sourceProfit').errors.required">
+            Please select source
+          </small>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-control">
+      <div class="mat-form-field-datepicker">
+        <mat-form-field color="primary">
+          <mat-label><mat-icon style="vertical-align: bottom; font-size: 20px; margin-right: 5px;">update</mat-icon>Date</mat-label>
+          <input matInput [matDatepicker]="picker1" formControlName="dateProfit">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div
+      class="form-control"
+      [ngClass]="{invalid: formProfit.get('noteProfit').touched && formProfit.get('noteProfit').invalid}">
+      <mat-form-field class="mat-form-field-note">
+        <textarea matInput formControlName="noteProfit" type="text" id="note" placeholder="Text..."></textarea>
+        <mat-error
+          *ngIf="formProfit.get('noteProfit').touched && formProfit.get('noteProfit').invalid"
+          class="validation"
+        >
+          <small *ngIf="formProfit.get('noteProfit').errors.required">
+            Please enter note
+          </small>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <button mat-flat-button color="accent"
+            type="submit"
+            class="transaction-form-btn"
+            [disabled]="formProfit.invalid || submitted">
+      Save
+    </button>
+
+    <button mat-flat-button color="warn"
+            type="button"
+            (click)="remove()"
+            class="transaction-remove-btn"
+            *ngIf="editProfit.editProfit">
+      Delete
+    </button>
+  </form>
+</div>

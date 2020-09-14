@@ -1,0 +1,122 @@
+.profile-page {
+  margin: 80px auto;
+  padding: 0 5rem;
+  max-width: 100%;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-title h1 {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.data-btn button {
+  padding: 5px 30px 5px 30px;
+  font-size: 18px;
+}
+
+.profile-page .page-content {
+  margin: 70px auto;
+}
+
+.page-content .profile-cards .cards {
+  display: flex;
+}
+
+.profile-cards .cards .user-new-info-card mat-card {
+  margin-right: 50px;
+  height: 381px;
+  width: 650px;
+}
+
+.profile-cards .cards .user-base-info-card mat-card {
+  height: 381px;
+  width: 650px;
+}
+
+.image-preview {
+  float: left;
+  margin: 0 30px auto 0;
+  padding: 10px 10px;
+  height: 250px;
+  width: 261px;
+  border: 1px dashed #424242;
+}
+
+.image-preview p {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 45%;
+}
+
+.image-preview img {
+  height: 250px;
+  width: 250px;
+}
+
+.mat-form-field-name {
+  width: 300px;
+  margin: 10% 2% 2% 2%;
+  font-size: 17px;
+}
+
+.profile-form-upload-btn {
+  margin-left: 13px;
+  font-size: 17px;
+  padding: 5px 15px 5px 15px;
+}
+
+.profile-form-btn {
+  margin: 20px auto auto 2%;
+  font-size: 17px;
+  padding: 5px 15px 5px 15px;
+}
+
+.user-data-block {
+  float: left;
+  padding: 10px 10px;
+  height: 360px;
+  width: 630px;
+  border: 1px dashed #424242;
+}
+
+.user-data-block p {
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+  margin: 150px auto;
+  line-height: 30px;
+}
+
+.profile-cards .cards .user-base-info-card .user-base-data-card {
+  margin-top: 60px;
+  float: left;
+  padding: 10px 10px;
+  height: 360px;
+  width: 630px;
+}
+
+.mat-form-field-email {
+  width: 550px;
+  margin-left: 6%;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.mat-form-field-password {
+  width: 550px;
+  margin-left: 6%;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.update-btn {
+  margin-left: 6%;
+  font-size: 17px;
+  padding: 5px 25px 5px 25px;
+}

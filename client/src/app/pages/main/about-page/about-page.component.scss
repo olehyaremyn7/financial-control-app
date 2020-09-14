@@ -1,0 +1,52 @@
+.about-page {
+  margin: 80px auto;
+  padding: 0 5rem;
+  max-width: 100%;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-title h1 {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.message-btn button {
+  padding: 5px 30px 5px 30px;
+  font-size: 18px;
+}
+
+.about-page .page-content {
+  margin: 100px auto;
+}
+
+.page-content .about-info .about-info-title {
+  text-align: center;
+}
+
+.page-content .about-info .about-info-title h1 {
+  font-size: 80px;
+  font-weight: 500;
+}
+
+.page-content .about-info .about-info-title img {
+  height: 200px;
+  margin-top: 30px;
+}
+
+.page-content .about-info .about-info-text {
+  margin-top: 30px;
+}
+
+.page-content .about-info .about-info-text p {
+  font-weight: 400;
+  padding: 10px 0;
+  margin: 1rem auto 1rem auto;
+  font-size: 30px;
+  text-indent: 30px;
+  display: block;
+  line-height: 40px;
+}

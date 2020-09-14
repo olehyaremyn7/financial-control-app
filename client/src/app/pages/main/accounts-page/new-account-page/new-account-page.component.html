@@ -1,0 +1,73 @@
+<div class="new-account-page">
+  <div class="page-header">
+    <div class="page-title">
+
+      <h1>
+        <a routerLink="/accounts">
+          <mat-icon style="vertical-align: bottom; font-size: 40px; margin: auto 10px 12px auto">account_balance</mat-icon>
+          Accounts</a>
+        <mat-icon style="vertical-align: bottom; font-size: 40px; margin: auto 10px 8px 10px">keyboard_arrow_right</mat-icon>
+        {{isNew ? 'Create' : 'Edit'}}
+      </h1>
+
+    </div>
+  </div>
+  <div class="page-content">
+    <mat-card class="new-account-form-card">
+      <mat-card-header>
+        <h1>
+          <mat-icon style="vertical-align: middle; font-size: 40px; margin-right: 10px; margin-top: -20px">{{ isNew ? 'fiber_new' : 'edit' }}</mat-icon>
+          {{ isNew ? 'New' : 'Edit' }} account </h1>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="card-content-form">
+          <form class="card" [formGroup]="form" (ngSubmit)="submit()">
+
+            <div
+              class="form-control"
+              [ngClass]="{invalid: form.get('title').touched && form.get('title').invalid}">
+              <mat-form-field class="mat-form-field-title">
+                <mat-label for="title"><mat-icon style="vertical-align: bottom; font-size: 20px"> text_fields</mat-icon> Account name</mat-label>
+                <input matInput formControlName="title" type="text" id="title" placeholder="Enter account name...">
+                <mat-error
+                  *ngIf="form.get('title').touched && form.get('title').invalid"
+                  class="validation"
+                >
+                  <small *ngIf="form.get('title').errors.required">
+                    Please enter account name
+                  </small>
+
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div
+              class="form-control"
+              [ngClass]="{invalid: form.get('balance').touched && form.get('balance').invalid}">
+              <mat-form-field class="mat-form-field-balance">
+                <mat-label for="balance"><mat-icon style="vertical-align: bottom; font-size: 20px">account_balance_wallet</mat-icon> Account balance</mat-label>
+                <input matInput formControlName="balance" id="balance" type="number" min="1">
+                <mat-error
+                  *ngIf="form.get('balance').touched && form.get('balance').invalid"
+                  class="validation"
+                >
+                  <small *ngIf="form.get('balance').errors.required">
+                    Please enter account balance
+                  </small>
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <button mat-flat-button color="accent"
+                    type="submit"
+                    class="new-account-form-btn"
+                    [disabled]="form.invalid || submitted">
+              Submit
+            </button>
+          </form>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

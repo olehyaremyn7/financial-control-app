@@ -1,0 +1,45 @@
+.contact-modal-form {
+  width: 600px;
+  height: 600px;
+}
+
+.contact-modal-form-title {
+  display: flex;
+}
+
+.contact-modal-form-title h1 {
+  margin: 30px auto auto 25px;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.contact-form {
+  margin-top: 65px;
+}
+
+.mat-form-field-name {
+  width: 542px;
+  margin-left: 5%;
+  font-size: 20px;
+  margin-bottom: 35px;
+}
+
+.mat-form-field-email {
+  width: 542px;
+  margin-left: 5%;
+  font-size: 20px;
+  margin-bottom: 35px;
+}
+
+.mat-form-field-message {
+  width: 542px;
+  margin-left: 5%;
+  font-size: 20px;
+  margin-bottom: 35px;
+}
+
+.contact-form-btn {
+  margin-left: 5%;
+  font-size: 17px;
+  padding: 5px 25px 5px 25px;
+}

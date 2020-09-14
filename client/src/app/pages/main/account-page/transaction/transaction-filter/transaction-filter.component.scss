@@ -1,0 +1,22 @@
+.filter-component {
+  margin-bottom: 50px;
+  width: 900px;
+  height: 200px;
+}
+
+.filter-card .filter-card-content {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 15px 15px 15px;
+}
+
+.filter-card .filter-card-content .form-control {
+  width: 30%;
+  border: none;
+}
+
+.filter-btn {
+  font-weight: 400;
+  font-size: 15px;
+  margin: 5px auto 10px 20px;
+}

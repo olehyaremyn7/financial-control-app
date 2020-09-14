@@ -1,0 +1,35 @@
+.modal-info {
+  padding: 30px 30px;
+}
+
+.modal-info .modal-info-title {
+  text-align: center;
+}
+
+.modal-info .modal-info-title h1 {
+  font-size: 60px;
+  font-weight: 500;
+}
+
+.modal-info .modal-info-title img {
+  height: 150px;
+  margin-top: 30px;
+}
+
+.modal-info .modal-info-text {
+  margin-top: 30px;
+}
+
+.modal-info .modal-info-text p {
+  font-weight: 400;
+  padding: 10px 0;
+  margin: 1rem auto 1rem auto;
+  font-size: 20px;
+  text-indent: 30px;
+  display: block;
+  line-height: 25px;
+}
+
+.modal-close-btn {
+  float: right;
+}

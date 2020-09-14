@@ -1,0 +1,55 @@
+.list {
+  margin: 100px auto;
+}
+
+.list mat-list mat-list-item {
+  padding: 20px 0;
+  cursor: pointer;
+  margin-bottom: 60px;
+}
+
+.list mat-list mat-list-item .transaction {
+  width: 100%;
+}
+
+.list mat-list mat-list-item .transaction .transaction-left-block {
+  float: left;
+}
+
+.list mat-list mat-list-item .transaction .transaction-left-block h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: gray;
+}
+
+.list mat-list mat-list-item .transaction .transaction-left-block h1 {
+  font-size: 30px;
+  font-weight: 500;
+  color: black;
+}
+
+.list mat-list mat-list-item .transaction .transaction-left-block h2 {
+  font-size: 20px;
+  font-weight: 400;
+  color: black;
+  margin-bottom: 100px;
+}
+
+.list mat-list mat-list-item .transaction .transaction-right-block {
+  float: right;
+}
+
+.list mat-list mat-list-item .transaction .transaction-right-block h1 {
+  font-size: 30px;
+  font-weight: 600;
+  color: black;
+  padding-top: 45px;
+}
+
+.list mat-list mat-list-item .transaction .transaction-left-block h2:hover {
+  color: #f44336;
+}
+
+.list mat-list mat-list-item .transaction .transaction-left-block h1:hover {
+  color: #f44336;
+}

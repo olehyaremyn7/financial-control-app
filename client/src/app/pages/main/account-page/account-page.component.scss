@@ -1,0 +1,110 @@
+.account-page {
+  margin: 80px auto;
+  padding: 0 5rem;
+  max-width: 100%;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-title h1 {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.transactions-btn button {
+  padding: 5px 30px 5px 30px;
+  font-size: 18px;
+}
+
+.account-page .page-content {
+  margin: 70px auto;
+}
+
+.stats-cards .cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.stats-cards .cards .card-balance mat-card {
+  margin-right: 50px;
+  height: 300px;
+  width: 550px;
+  margin-bottom: 50px;
+}
+
+.stats-cards .cards .card-incomes mat-card {
+  height: 300px;
+  width: 550px;
+  margin-bottom: 50px;
+}
+
+.stats-cards .cards .card-expenses mat-card {
+  margin-right: 50px;
+  height: 300px;
+  width: 550px;
+}
+
+.stats-cards .cards .card-balance-of-period mat-card {
+  height: 300px;
+  width: 550px;
+}
+
+.card-balance mat-card {
+  background: #3F51B5;
+}
+
+.card-incomes mat-card {
+  background: #69f0ae;
+}
+
+.card-expenses mat-card {
+  background: #dc3545;
+}
+
+.card-balance-of-period mat-card {
+  background: #FF4081;
+}
+
+mat-card mat-card-header mat-card-title {
+  font-size: 40px;
+  font-weight: 500;
+  margin: 40px auto auto 30px;
+}
+
+mat-card mat-card-content {
+  margin-top: 80px;
+}
+
+mat-card mat-card-content .balance h2 {
+  font-size: 60px;
+  font-weight: 500;
+  margin: 0 auto auto 50px;
+}
+
+mat-card mat-card-content .incomes h2 {
+  font-size: 60px;
+  font-weight: 500;
+  margin: 0 auto auto 50px;
+}
+
+mat-card mat-card-content .expenses h2 {
+  font-size: 60px;
+  font-weight: 500;
+  margin: 0 auto auto 50px;
+}
+
+mat-card mat-card-content .period_of_balance h2 {
+  font-size: 60px;
+  font-weight: 500;
+  margin: 0 auto auto 50px;
+}
+
+mat-card mat-card-content .text p {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 70px auto auto 50px;
+}

@@ -1,0 +1,67 @@
+<div class="contact-modal-form">
+  <div class="contact-modal-form-title">
+    <h1>Send us your message
+      <mat-icon style="vertical-align: middle; font-size: 40px; margin-right: 10px; margin-top: -20px">contact_mail</mat-icon></h1>
+  </div>
+  <form class="contact-form" [formGroup]="form" (ngSubmit)="submit()">
+    <div
+      class="form-control"
+      [ngClass]="{invalid: form.get('name').touched && form.get('name').invalid}">
+      <mat-form-field class="mat-form-field-name">
+        <mat-label for="name"><mat-icon style="vertical-align: bottom; font-size: 20px; margin-right: 5px;">person</mat-icon>Your name</mat-label>
+        <input matInput formControlName="name" type="text" id="name">
+        <mat-error
+          *ngIf="form.get('name').touched && form.get('name').invalid"
+          class="validation"
+        >
+          <small *ngIf="form.get('name').errors.required">
+            Please enter your name
+          </small>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div
+      class="form-control"
+      [ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}">
+      <mat-form-field class="mat-form-field-email">
+        <mat-label for="email"><mat-icon style="vertical-align: bottom; font-size: 20px">email</mat-icon> Your email address</mat-label>
+        <input matInput formControlName="email" type="email" id="email" placeholder="Ex. pat@example.com">
+        <mat-error
+          *ngIf="form.get('email').touched && form.get('email').invalid"
+          class="validation"
+        >
+          <small *ngIf="form.get('email').errors.required">
+            Please enter email
+          </small>
+          <small *ngIf="form.get('email').errors.email">
+            Please enter a valid email address
+          </small>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div
+      class="form-control"
+      [ngClass]="{invalid: form.get('message').touched && form.get('message').invalid}">
+      <mat-form-field class="mat-form-field-message">
+        <textarea matInput formControlName="message" type="text" id="message" placeholder="Your message..."></textarea>
+        <mat-error
+          *ngIf="form.get('message').touched && form.get('message').invalid"
+          class="validation"
+        >
+          <small *ngIf="form.get('message').errors.required">
+            Please enter your message
+          </small>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <button mat-flat-button color="accent"
+            type="submit"
+            class="contact-form-btn"
+            [disabled]="form.invalid || submitted">
+      Send
+    </button>
+  </form>
+</div>
